@@ -1,0 +1,97 @@
+// intresting program that i have made;
+// program for displaying different shapes;
+// select the numbers from 1 to 5;
+
+#include <iostream>
+using namespace std;
+int main(){                                // start;
+	cout<<"1 = +ve right angle triangle "<<endl;
+	cout<<"2 = inverted +ve right angle triangle "<<endl;
+	cout<<"3 = inverted -ve right angle triangle "<<endl;
+	cout<<"4 = -ve right angle triangle "<<endl;
+	cout<<"5 = daimond "<<endl;
+	cout<<endl;
+	int z;
+	cout<<"enter a serial no. from above"<<endl;
+	cin>>z;
+	if(z==1){
+	int n;
+	cout<<"enter a number"<<endl;
+	cin>>n;
+	for(int i=1;i<=n;i++){
+		for(int j=1;j<=i;j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}                                          // end of a part;
+else if(z==2){
+	int a;
+	cout<<"enter a number"<<endl;
+	cin>>a;
+	for(int i=1;i<=a;i++){
+		for(int j=a;j>=i;j--){
+			cout<<"*";	
+		}
+		for(int k=a;k>=i-1;k--){
+			cout<<" ";
+		}
+		cout<<endl;
+    }
+}                                         // end of b part;
+else if(z==3){
+    int b;
+	cout<<"enter a number"<<endl;
+	cin>>b;
+	for(int i=b;i>=1;i--){
+		for(int j=b;j>=i;j--){
+			cout<<" ";
+		}
+		for(int k=1;k<=i;k++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}                                         // end of part c;
+else if(z==4){
+int c;
+	cout<<"enter a number"<<endl;
+	cin>>c;
+	for(int i=1;i<=c;i++){
+		for(int k=1;k<=c-i;k++){
+			cout<<" ";
+		}
+		for(int j=1;j<=i;j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+}                                         // end of part d;
+else if(z==5){
+    int d;
+    cout<<"enter a number"<<endl;
+    cin>>d;
+    for (int i=1; i<d; i++){
+        for (int j=1; j<=d-i; j++){
+            cout<<" ";
+        }
+        for (int k=1; k<=2*i-1;  k++){
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+    for (int i=d; i>=1; i--){
+        for (int j=1; j<=(d-i); j++){
+            cout<<" ";
+        }
+        for(int k=1; k<=2*i-1;  k++){
+            cout<<"*";
+        } 
+        cout<<endl;
+    }
+}                                         // end of part e;
+else
+cout<<"error"<<endl;
+cout<<endl;
+cout<<"Thank you for using the program"<<endl;
+}
