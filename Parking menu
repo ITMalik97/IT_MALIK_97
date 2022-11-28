@@ -1,0 +1,53 @@
+//program for parking in a hotel/motel;
+// selecting a parking slot for the desired vehicle;
+
+#include <iostream>
+using namespace std;
+int main(){
+	char ch;
+	int n, x, a=100, b=200, c=250;
+	cout<<"M  =  Motorbike"<<endl;
+	cout<<"C  =  Car"<<endl;
+	cout<<"S  =  Suv"<<endl;
+	cout<<endl;
+	cout<<"Enter the debit card on desired slot"<<endl;
+	cout<<"Press 1 to pay"<<endl;
+	cout<<"press 2 to cancel"<<endl;
+	cin>>x;                                           // end of initial entry;
+	if(x==1){                                         // start of if statement;
+	cout<<endl;
+	cout<<"Enter the type of vehicle = ";
+	cin>>ch;
+	cout<<"Enter number of days you want to spend = ";
+	cin>>n;                                 
+	cout<<endl;          
+	if(ch=='M'){                                      // start of 1st nested if;
+	cout<<"Motrbike = Rs:100 Per day"<<endl;
+    cout<<"Charges = "<<n*a<<"/-"<<endl;
+    cout<<endl;
+    cout<<"Thank you for using the service"<<endl;
+	cout<<"press Enter Key to close";
+    }                                                 
+	else if(ch=='C'){                                 // 2nd nested if;
+	cout<<"Car = Rs:200 Per day"<<endl;
+	cout<<"Charges = "<<n*b<<"/-"<<endl;
+	cout<<endl;
+	cout<<"Thank you for using the service"<<endl;
+	cout<<"press Enter Key to close";
+    } 
+	else if(ch=='S'){                                 // 3rd nested if;
+	cout<<"Suv = Rs:250 Per day"<<endl;
+	cout<<"Charges = "<<n*c<<"/-"<<endl;
+	cout<<endl;
+	cout<<"Thank you for using the service"<<endl;
+	cout<<"press Enter Key to close";
+	}
+	else 
+	cout<<"error"<<endl;
+    }                                                 //end of nested if;
+    else if(x==2){
+	cout<<"The request has been canelled"<<endl;
+    }                                                 //end of if statement;
+    else
+    cout<<"press Enter Key to exit and enter the data again"<<endl;
+}                                                     //the end   :)
