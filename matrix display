@@ -1,0 +1,33 @@
+// display of a matrix of any order.
+//also sum ========> this is an extra part
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+int n,a;  // global variables
+int main(){
+	int sum;
+	cout << "Enter the number = ";
+	cin>>n>>a;
+	int arr[n][a];
+for ( int i=0;i<n;i++){
+		for (int j=0;j<a;j++){
+			cout << "Enter the elements ["<<i<<"] ["<<j<<"] = ";
+			cin>> arr[i][j];
+		}
+	}
+	cout <<endl << "Matrix is"<<endl;        // display of matrix
+	for (int i=0;i<n;i++){
+		for (int j=0;j<a;j++){
+			cout <<"   "<< arr[i][j] <<" ";
+		}
+		cout << endl;
+	}
+	// extra part for sum of all the elements of the matrix
+	for ( int i=0;i<n;i++){
+		for (int j=0;j<a;j++){
+			sum += arr [i] [j];
+		}
+}
+cout <<endl << "Sum of all the elements = "<<sum<<endl;
+}
