@@ -1,3 +1,5 @@
+// adjoint for 2 by 2 and 3 by 3 matrix
+
 #include <iostream>
 using namespace std;
 int main(){
