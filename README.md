@@ -1,5 +1,5 @@
-- Hello My name is Muhammad Tabish Masood
+Hello, Tabish here,
 
-- 🌱 I’m currently doing EE 
-- 💬 Ask me about : c++ programming
-- 📫 How to reach me: tabishawan0097@gmail.com
+Currently doing EE 
+Ask me about C++ programming
+Contact me from tabishawan0097@gmail.com
