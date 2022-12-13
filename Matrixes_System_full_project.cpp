@@ -54,7 +54,7 @@ int main(){
 int menu(){
     cout << endl << "**************************************************************"<<endl;
     cout << endl << "|                      MATRICES SYSYTEM                      |"<<endl;
-    cout << endl << "|             Made by Muhammad Tabish and Maryam             |"<<endl;
+    cout << endl << "|                Made by Muhammad Tabish Masood              |"<<endl;
     cout << endl << "**************************************************************"<<endl;
     cout << endl;
     cout << endl << "|------------------------=(WELCOME)=-------------------------|"<<endl;
