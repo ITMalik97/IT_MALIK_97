@@ -1,0 +1,199 @@
+// Made by Muhammad Tabish Masood
+
+#include <iostream>
+#include <fstream>
+#include <cstring>
+
+using namespace std;
+
+struct student{
+    char First_Name[10], CNIC[20], Phone[15], Program[10];
+    int RollNo;
+    float cgpa;
+    char temp[450];
+};
+
+int main(){
+    cout << endl << "Date and Time" << endl;
+    cout << __DATE__ << endl;         // time can also displayed by this method
+    cout << __TIME__ << endl << endl;
+    student data[450];
+    char datas[100];
+    int m;
+    while (true){
+        cout << "|  1 => Show all students                            |" << endl;
+        cout << "|  2 => Print data of required roll number           |" << endl;
+        cout << "|  3 => Print the data of student with highest CGPA  |" << endl;
+        cout << "|  4 => To sort data roll no                         |" << endl;
+        cout << "|  5 => To sort data by name                         |" << endl;
+        cout << "|  6 => To sort data by cgpa                         |" << endl;
+        cout << "|  7 => Add a student                                |" << endl;
+        cout << "|  8 => To exit the program                          |" << endl;
+        cout << "|          Enter from above to proceed!              |" << endl;
+        cin >> m;
+        if (m == 1){
+            ifstream read("Student.txt");
+            read.getline(datas, 100);
+            for(int i=0;i<450;i++){
+                read >> data[i].First_Name >> data[i].CNIC >> data[i].RollNo >> data[i].cgpa >> data[i].Program >> data[i].Phone;
+            }
+            for (int i=0;i<450;i++){
+                cout << data[i].First_Name << "  " << data[i].CNIC << "  " << data[i].RollNo << "  " << data[i].cgpa << "  " << data[i].Program << "  " << data[i].Phone;
+                cout << endl;
+            }
+        }
+        else if (m == 2){
+            ifstream read("Student.txt");
+            int i = 0;
+            read.getline(datas, 100);
+            
+            for(int i=0;i<450;i++){
+                read >> data[i].First_Name >> data[i].CNIC >> data[i].RollNo >> data[i].cgpa >> data[i].Program >> data[i].Phone;
+            }
+            float roll;
+            cout << "enter the desired roll number: ";
+            cin >> roll;
+            for (int i=0;i<450;i++){
+                if (roll == data[i].RollNo){
+                    cout << "Rollno exist!" << endl;
+                    cout << "First_Name	CNIC   RollNo	 cgpa  Phone" << endl;
+                    cout << data[i].First_Name << "  " << data[i].CNIC << "  " << data[i].RollNo << "  " << data[i].cgpa << "  " << data[i].Program << "  " << data[i].Phone;
+                    cout << endl;
+                    break;
+                }
+            }
+            if (roll){
+                cout << endl;
+            }
+            else if (roll != data[i].RollNo){
+                cout << "the roll number doesn't exist" << endl;
+            }
+        }
+    
+        else if (m == 3){
+            ifstream read("Student.txt");
+            read.getline(datas, 100);
+        	for(int i=0;i<450;i++){
+                read >> data[i].First_Name >> data[i].CNIC >> data[i].RollNo >> data[i].cgpa >> data[i].Program >> data[i].Phone;
+            }
+            float max = data[0].cgpa;
+            for (int i=0;i<450;i++){
+                if (data[i].cgpa > max){
+                    max = data[i].cgpa;
+                }
+            }
+            cout << "max cgpa: " << max << endl;
+        }
+        else if (m == 4){  
+            int n = 450;
+            ifstream read("Student.txt");
+            read.getline(datas, 100);
+            for(int i=0;i<450;i++){
+                read >> data[i].First_Name >> data[i].CNIC >> data[i].RollNo >> data[i].cgpa >> data[i].Program >> data[i].Phone;
+                }
+            student *st = new student[450]; 
+            cout << "\n";
+            cout << "Roll_No \t" << "Name \t \t" << "GPA \t \n" << endl;
+            for (int i=0;i<450;i++){
+                for (int j=0;j<450;j++){
+                    if (data[j].RollNo < data[j + 1].RollNo){
+                       student temp = data[j];
+                       data[j] = data[j + 1];
+                       data[j + 1] = temp;
+                    }
+                } 
+            }
+            for (int i=0;i<450;i++){
+                cout << data[i].First_Name << "  " << data[i].CNIC << "  " << data[i].RollNo << "  " << data[i].cgpa << "  " << data[i].Program << "  " << data[i].Phone;
+                cout << endl;
+            }
+        }
+        if (m == 5){
+            int n = 450;
+            ifstream read("Student.txt");
+            read.getline(datas, 100);
+            for(int i=0;i<450;i++){
+                read >> data[i].First_Name >> data[i].CNIC >> data[i].RollNo >> data[i].cgpa >> data[i].Program >> data[i].Phone;
+                }
+            student *st = new student[450]; 
+            cout << "\n";
+            cout << "Roll_No \t" << "Name \t \t" << "GPA \t \n" << endl;
+            for (int i=0;i<450;i++){
+                for (int j=0;j<450;j++){
+                        int h = strcmp(data[j].First_Name ,data[j + 1].First_Name);
+                            if (h == 1){
+                        student temp = data[j];
+                        data[j] = data[j + 1];
+                        data[j + 1] = temp;
+                    }
+                }
+            }
+            for (int i=0;i<450;i++){
+                cout << data[i].First_Name << "  " << data[i].CNIC << "  " << data[i].RollNo << "  " << data[i].cgpa << "  " << data[i].Program << "  " << data[i].Phone;
+                cout << endl;
+            }
+        }
+		
+        if (m == 6){
+            int n = 450;
+            ifstream read("Student.txt");
+            read.getline(datas, 100);
+            for(int i=0;i<450;i++){
+                read >> data[i].First_Name >> data[i].CNIC >> data[i].RollNo >> data[i].cgpa >> data[i].Program >> data[i].Phone;
+                }
+            student *st = new student[450]; 
+            cout << "\n";
+            cout << "Roll_No \t" << "Name \t \t" << "GPA \t \n" << endl;
+            for (int i=0;i<450;i++){
+                for (int j=0;j<450;j++){
+                    if (data[j].cgpa < data[j + 1].cgpa){
+                       student temps = data[j];
+                       data[j] = data[j + 1];
+                       data[j + 1] = temps;
+                    }
+                } 
+            }
+            for (int i=0;i<450;i++){
+                cout << data[i].First_Name << "  " << data[i].CNIC << "  " << data[i].RollNo << "  " << data[i].cgpa << "  " << data[i].Program << "  " << data[i].Phone;
+                cout << endl;
+            }
+        }
+        else if (m == 7){
+            char First_Name[10], CNIC[20], Phone[15], Program[10];
+            int RollNo, a = 1;
+            float cgpa;
+            while(a){
+                cout << "enter the required: " << endl;
+                cout << "First Name: ";
+                cin >> First_Name;
+                cout << "CNIC: ";
+                cin >> CNIC;
+                cout << "roll number: ";
+                cin >> RollNo;
+                cout << "CGPA: ";
+                cin >> cgpa;
+                cout << "Phone number: ";
+                cin >> Phone;
+                cout << "enter 1 to continue" << endl;
+                cout << "enter the 2 to exit" << endl;
+                cin >> a;
+                if (a == 2){
+                    break;
+                }
+           }
+           ofstream outfile("Student.txt",ios::app);
+           outfile << endl << First_Name << "  " << CNIC << "  " << RollNo << "  " << cgpa << "  " << Phone;
+           cout << "file made at ";
+           ofstream time("Activity.txt",ios::app);  // new file to store time
+           time << __DATE__ << "  " << __TIME__ << endl;
+           cout << __DATE__ << endl << __TIME__ << endl;
+        }
+        // bonus task starting below
+        else if (m == 8){
+            cout << "thankyou for using the program" << endl;
+            break;
+        }
+        else 
+        cout << "error" << endl;
+    }
+}
