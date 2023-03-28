@@ -1,0 +1,132 @@
+#include <iostream>
+#include <cstring>
+#include <fstream>
+using namespace std;
+struct data_d{
+	int id;
+	string n;
+	string sp;
+};
+struct data_p{
+	string ptName;
+    int age;
+    int doc_ID;
+};
+class Doctor{
+    private:
+        int doc_ID;
+        string docName;
+        string specialization;
+    public:
+	    Doctor(){
+	        doc_ID = 0;
+	        docName = " ";
+	        specialization = " ";
+        }
+        void setValues(int i, string x, string y){
+            doc_ID = i;
+		    docName = x;
+		    specialization = y;
+        }
+        void printValues(){	
+            cout << doc_ID << "\t" << docName << "\t" << specialization << endl;
+        }
+        string getspc(){
+      	    return specialization;
+	    }
+	    int getid(){
+	  	    return doc_ID;
+	    }
+};
+class patient{
+    private:
+        string ptName;
+        int age;
+        int doc_ID;
+    public:
+        patient(){
+    	ptName="";age=0;doc_ID=0;
+    	}
+    	setValues1(string s, int a, int id){
+            ptName = s; 
+    		age = a; 
+    		doc_ID = id;
+        }
+        void printValues1(){
+            cout << ptName << "\t" << age << "\t" << doc_ID << endl;
+        }
+        int getID1(){
+        	return doc_ID;
+    	}
+        string getname1(){
+       	    return ptName; 
+        }
+        int getage(){
+       	    return age;
+    	}
+};
+int main(){
+    int it;
+    cout << "enter 1 to proceed" << endl;
+    cout << "enter 2 to exit" << endl;
+    cin >> it;
+    if (it == 1){
+	cin.ignore();
+	cout << endl;
+	data_d s1[50];
+	data_p s2[50];
+	Doctor d[50];
+    ifstream infile("doctors.txt");
+	for (int i=0;i<50;i++){
+		infile >> s1[i].id >> s1[i].n >> s1[i].sp;
+    	d[i].setValues(s1[i].id, s1[i].n, s1[i].sp);
+	} 
+    patient p[50];
+    ifstream read("patientsv2.txt");
+    for(int j=0;j<50;j++){
+    	read >> s2[j].ptName >> s2[j].age >> s2[j].doc_ID;
+    	p[j].setValues1(s2[j].ptName, s2[j].age, s2[j].doc_ID );
+	}
+    cout << "...Patients..." << endl;
+    for (int y=0;y<50;y++){
+        p[y].printValues1();
+	}
+    cout << "Press ENTER key to continue" << endl;
+	cin.ignore();
+	cout << "...Doctors..." << endl;	 	 	
+    for (int y=0;y<18;y++){	
+        d[y].printValues();
+	}
+	int id;
+	cout << "Enter ID of a Doctor";
+	cin >> id;
+    cout << "The names of patients are" << endl;
+	for(int j=0;j<18;j++){
+	    if (id == d[j].getid()){
+		    cout << p[j].getname1() << endl;
+	    }
+    }	
+	string field;
+	cout << "Enter the specialization of the Doctor: ";
+	cin >> field;
+    cout << "The names of patients are" <<endl;
+	for (int j=0;j<18;j++){
+	    if(d[j].getspc() == field){
+		    cout << p[j].getname1() << endl;
+	    }
+    }
+	int age;
+	cout << "Enter the required age: ";
+	cin >> age;
+    cout << "The patients under required age are" << endl;
+	for (int i=0;i<18;i++){
+		if (age == p[i].getage()){
+			cout << p[i].getname1() << endl;
+		    }
+ 	    }
+    }
+    else if (it == 2){
+        cout << "thankyou for using the program" << endl;
+    }
+	return 0;
+}
