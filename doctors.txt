@@ -1,0 +1,50 @@
+121	Nadeem	Emergency_medicine
+122	Rayyaz	Neurology
+91	Ahmed	Anesthesiology
+32	Ali	Dermatology
+143	Fatima	Dermatology
+22	Aahil	Pathology
+54	Urooj	Pediatrics
+231	Abuzar	Surgery
+87	Maria	Neurology
+62	Tariq	Surgery
+156	Michael	Pediatrics
+172	Ilyas	Surgery
+321	Rubab	Surgery
+19	Wasif	Urology
+255	Faseeh	Neurology
+110	Hasnain	Pediatrics
+198	Anas	Pediatrics
+59	Kashif	Urology
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
